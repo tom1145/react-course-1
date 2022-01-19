@@ -35,6 +35,16 @@
   border-radius: 12px;
 }
 
+.btnClick {
+  border: 2px solid #5B647E;
+  border-radius: 12px;
+  padding: 0.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  background: #191f2a;
+}
+
 @media (min-width: 580px) {
   .expenseItemDescription {
     flex-direction: row;

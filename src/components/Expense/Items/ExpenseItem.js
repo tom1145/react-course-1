@@ -2,7 +2,7 @@ import React from "react";
 
 import s from "./style.module.scss";
 
-import ExpanseDate from "../Date/ExpenseDate";
+import ExpanseDate from "./Date/ExpenseDate";
 import Card from "../../Card/Card";
 
 function ExpenseItem(props) {
