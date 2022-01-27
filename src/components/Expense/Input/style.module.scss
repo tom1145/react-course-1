@@ -9,6 +9,12 @@
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
 }
 
+.btnBlock {
+  // max-width: 150px;
+  display: inline-block;
+  // margin: 0 auto;
+}
+
 .newExpense button {
   font: inherit;
   cursor: pointer;

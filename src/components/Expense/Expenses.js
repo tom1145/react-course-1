@@ -2,10 +2,10 @@ import React, { useState } from "react";
 
 import s from "./style.module.scss";
 
-import ExpenseItem from "./Items/ExpenseItem";
 import ExpensesFilter from "./Filter/ExpensesFilter";
 import Card from "../Card/Card";
-import { expensesData } from "../../static/ExpenseData";
+import ExpenseList from "./List/ExpenseList";
+import { Modal } from "./Modal/Modal";
 
 const Expenses = (props) => {
   const [filteredYear, setFilteredYear] = useState("2020");
@@ -14,6 +14,21 @@ const Expenses = (props) => {
     setFilteredYear(selectedYear);
   };
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  console.log(isModalOpen);
+  const onCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
+  const openModal = () => {
+    setIsModalOpen(true);
+    // console.log(isModalOpen);
+  };
+
+  const filteredExpenses = props.items.filter((expense) => {
+    return expense.date.getFullYear().toString() === filteredYear;
+  });
+
   return (
     <div className="container">
       <Card className={s.expenses}>
@@ -21,13 +36,11 @@ const Expenses = (props) => {
           selected={filteredYear}
           onChangeFilter={filterYearHandler}
         />
-        {expensesData.map((item) => (
-          <ExpenseItem
-            title={item.title}
-            amount={item.amount}
-            date={item.date}
-          />
-        ))}
+        <ExpenseList items={filteredExpenses} />
+        <button type="button" onClick={openModal}>
+          Open Modal
+        </button>
+        <Modal open={isModalOpen} onClose={onCloseModal} />
       </Card>
     </div>
   );

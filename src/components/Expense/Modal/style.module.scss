@@ -1,0 +1,62 @@
+
+.input {
+  font-weight: 700;
+  border-radius: 50px 0 0 50px;
+}
+
+.leftBtn {
+  left: -20px;
+  z-index: 3;
+}
+
+.cardHeight {
+  min-height: 120px;
+}
+
+.point {
+  position: absolute;
+  left: -40px;
+  top: 20px;
+}
+
+.line {
+  color: var(--grey-dark);
+  background: var(--grey-dark);
+  width: 20px;
+}
+
+.vl {
+  //position: absolute;
+  border-left: 1px solid var(--grey-dark);
+  height: calc(100% - 54px);
+  top: 28px;
+  padding: 20px;
+}
+
+.search {
+  &:hover, &:focus {
+      border: 1px solid black;
+  }
+}
+
+.infoSearch {
+  position: absolute;
+  right: 50px;
+  top: 0;
+}
+
+.grid {
+  grid-template-columns: repeat(auto-fill, minmax(191px, 1fr));
+  grid-column-gap: 20px;
+}
+
+.gridSmall {
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  grid-column-gap: 1rem;
+  grid-row-gap: 1rem;
+}
+
+.awarnessBox {
+  border: 2px solid red;
+  border-radius: 10px;
+}
